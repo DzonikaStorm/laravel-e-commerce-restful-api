@@ -2,23 +2,25 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\Product;
 use App\Models\Review;
-use Database\Factories\ProductFactory;
-use Database\Factories\ReviewFactory;
+
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        // $this->call(UsersTableSeeder::class);
         Product::factory()->count(50)->create();
-        Review::factory()->count(50)->create();
+        Review::factory()->count(300)->create();
     }
 }
